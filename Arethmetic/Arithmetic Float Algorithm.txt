@@ -1,0 +1,25 @@
+//compression
+
+Set low to 0.0
+Set high to 1.0
+While there are still input symbols do
+    get an input symbol
+    code_range = high - low.
+          high = low + code_range *  high_range of the symbol being coded
+         low = low + code_range * low_range of the symbol being coded
+End of While
+output low
+
+
+
+
+//decompression
+
+get the number encoding the data
+loop    
+current symbol  =  the symbol/character in which range the number falls
+current range =  current symbols high value – current symbols low value   
+subtract current symbols low value from number     
+divide the number by the current range 
+end loop
+
